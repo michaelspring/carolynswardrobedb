@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block addlisting %}
+<!--============================= ADD LISTING =============================-->
+<section class="main-block light-bg" height:"90%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="add-listing-wrap">
+                    <h2>Carolyn's Wardrobe Database</h2>
+                    <p>You can use this website to search your previous outfits based on what the what you were doing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <br>
+<!--//END ADD LISTING -->
+{% endblock %}
+
+{% block categories %}
+<!--============================= CATEGORIES =============================-->
+<section class="block">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+          <div class="styled-heading">
+              <h3>Browse Playlists</h3>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-3 category-responsive">
+          <a onclick="location.href='{% url 'weekend_brunch_url' %}'" class="category-wrap">
+              <div class="category-block">
+                <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Fweekend_brunch.png?alt=media&token=90df09b2-8a66-49cc-932c-ba4fa1dcd7bd" height="120" width="120"></img>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-3 category-responsive">
+          <a onclick="location.href='{% url 'summer_vibes_url' %}'" class="category-wrap">
+              <div class="category-block">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Fchilled_summer.png?alt=media&token=4f0d63de-39d1-4954-a42a-941d9ef28f91" height="120" width="120"></img>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-3 category-responsive">
+          <a onclick="location.href='{% url 'professional_url' %}'" class="category-wrap">
+              <div class="category-block">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Fprofessional.png?alt=media&token=cf9609fb-1ac2-4341-ba6b-7bc734fe7f94" height="120" width="120"></img>
+              </div>
+          </a>
+      </div>
+      <div class="col-md-3 category-responsive">
+          <a onclick="location.href='{% url 'party_time_url' %}'"class="category-wrap">
+              <div class="category-block">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Fparty_time.png?alt=media&token=eaded532-4953-42db-b395-4f8a0bc83736" height="120" width="120"></img>
+              </div>
+          </a>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 category-responsive">
+            <a onclick="location.href='{% url 'en_vacances_url' %}'" class="category-wrap">
+                <div class="category-block">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Fen_vacances.png?alt=media&token=e18b953f-5859-4a2e-bfb4-7ce00b85b415" height="120" width="120"></img>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 category-responsive">
+            <a onclick="location.href='{% url 'active_url' %}'" class="category-wrap">
+                <div class="category-block">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Factive.png?alt=media&token=7ce97b07-9a17-4277-9517-3d8c5242d499" height="120" width="120"></img>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 category-responsive">
+            <a onclick="location.href='{% url 'feeling_fresh_url' %}'" class="category-wrap">
+                <div class="category-block">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Ffeeling_fresh.png?alt=media&token=097c6088-33e6-4f3d-8e61-d47bf9282b58" height="120" width="120"></img>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 category-responsive">
+            <a onclick="location.href='{% url 'inbetweeen_url' %}'" class="category-wrap">
+                <div class="category-block">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/buttons%2Finbetween.png?alt=media&token=91b0ac16-cfe8-4112-b6f2-c63c5a2d0ed4" height="120" width="120"></img>
+                </div>
+            </a>
+        </div>
+      </div>
+
+</section>
+        <!--//END CATEGORIES -->
+{% endblock %}
+
+{% block datahere %}
+<div id="the_data_part">
+      {% if data %}
+      <section class="main-block light-bg">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-md-9">
+                      <div class="styled-heading">
+                        <h3>Hey Carolyn, here are your results!</h3>
+                        <p>Please bear in mind that this is just snapshot in time and that there are a lot of independent factors to look out for when making a decision. I mean, are we likely to be sitting in the sun? Coasts are notoriously windy. Underground networks are ALWAYS hot to a factor of 2 in summer.</p>
+                      </div>
+                  </div>
+              </div>
+              {% for key, value in data %}
+              <div class="row">
+                  <div class="col-md-4 featured-responsive">
+                      <div class="featured-place-wrap">
+                          <a href="detail.html">
+                              <img src={{ value.Image }} class="img-fluid" alt="#">
+                              <div class="featured-title-box">
+                                  <h8>{{ key }}</h8><br>
+                                  <p> {{ value.Temperature }} </p> <span>• </span>
+                                  <p> {{ value.Month }} </p> <span> • </span>
+                                  <p>{{ value.City }} </p>
+                                  <ul>
+                                      <li>"{{ value.Reaction }}"</li>
+                                  </ul>
+                              </div>
+                          </a>
+                      </div>
+                    </div>
+              </div>
+              {% endfor %}
+
+
+              <br>
+              <footer class="text-muted">
+                <div class="row">
+                  <div class="container">
+                    <p class="float-right">
+                      <a href="#">Back to top</a>
+                    </footer>
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                    <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+      {% endif %}
+      </section>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block findplaces %}
+{% endblock %}
+
+{% block featuredplaces %}
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
+
+
+{% block navbar %}
+{% endblock %}

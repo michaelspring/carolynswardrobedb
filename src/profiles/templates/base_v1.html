@@ -1,0 +1,128 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <!--<link href="{% static 'css/album.css' %}" rel="stylesheet">-->
+    <!--<link href="{% static 'css/blog.css' %}" rel="stylesheet">-->
+    <!--<link href="{% static 'css/form-validation.css' %}" rel="stylesheet">
+    <link href="{% static 'css/starter-template.css' %}" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <!--<link href="narrow-jumbotron.css" rel="stylesheet">-->
+  </head>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    </style>
+
+  <body>
+
+{% block jumbotron %}
+{% endblock %}
+
+{% block uptop %}
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills float-right">
+        {% url 'search' as search %}
+        {% url 'tidy' as tidy %}
+        <li {% if request.path == search %} class="active" {% endif %}><a href="{% url 'search' %}">Search your wardrobe <span class="sr-only">(current)</span></a></li> &nbsp &nbsp &nbsp &nbsp
+        <li {% if request.path == tidy %} class="active" {% endif %}><a href="{% url 'tidy' %}">Put things in your wardrobe <span class="sr-only">(current)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+{% endblock %}
+
+{% block doorform %}
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+{% block basicformname %}
+{% endblock %}
+
+{% block textstyle %}
+{% endblock %}
+
+{% block bootstrapform %}
+{% endblock %}
+
+{% block datafind %}
+{% endblock %}
+
+{% block plaincontent %}
+{% endblock %}
+
+{% block testbutton %}
+{% endblock %}
+
+{% block subheaders %}
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Company 2017</p>
+      </footer>
+{% endblock %}
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'javascript/ie10-viewport-bug-workaround.js' %}"></script>
+  </body>
+</html>

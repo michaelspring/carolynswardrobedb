@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block subheaders %}
+{% endblock %}
+
+{% block addlisting %}
+{% endblock %}
+
+{% block datahere %}
+<section class="main-block light-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="styled-heading">
+                  <h3>Hey Carolyn, here are your results!</h3>
+                  <p>Please bear in mind that this is just snapshot in time and that there are a lot of independent factors to look out for when making a decision. I mean, are we likely to be sitting in the sun? Coasts are notoriously windy. Underground networks are ALWAYS hot to a factor of 2 in summer.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 featured-responsive">
+                <div class="featured-place-wrap">
+                    <a href="detail.html">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/weatherwear-a4626.appspot.com/o/7a249b05.jpeg?alt=media&token=276ce3c1-86bc-4095-9be6-4e31af992fcb" class="img-fluid" alt="#">
+                        <div class="featured-title-box">
+                            <h8>{{ key }}</h8><br>
+                            <p> {{ value.Temperature }} </p> <span>• </span>
+                            <p> {{ value.Month }} </p> <span> • </span>
+                            <p>{{ value.City }}/p>
+                            <ul>
+                                <li>{{ value.reaction }}</li>
+
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+              </div>
+        </div>
+
+
+        <br>
+        <footer class="text-muted">
+          <div class="row">
+            <div class="container">
+              <p class="float-right">
+                <a href="#">Back to top</a>
+              </footer>
+              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+              <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+
+</section>
+
+{% endblock %}
+
+{% block backtotop %}
+{% endblock %}
+
+{% block findplaces %}
+{% endblock %}
+
+{% block featuredplaces %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block categories %}
+{% endblock %}

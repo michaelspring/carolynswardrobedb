@@ -1,0 +1,13 @@
+{% block uptop %}
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills float-right">
+        {% url 'search' as search %}
+        {% url 'tidy' as tidy %}
+        <li {% if request.path == search %} class="nav-link inactive" {% endif %}><a href="{% url 'search' %}">Search your wardrobe <span class="sr-only">(current)</span></a></li>
+        <li {% if request.path == tidy %} class="nav-link inactive" {% endif %}><a href="{% url 'tidy' %}">Put things in your wardrobe <span class="sr-only">(current)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+{% endblock %}
