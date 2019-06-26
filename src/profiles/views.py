@@ -69,6 +69,7 @@ def q_weekendBrunch(request):
     data = ref.order_by_child('weekendBrunch').equal_to(1).get()
     return render(request, 'search.html', {'data' : sorted(data.iteritems())})
 
+
 def q_summerVibes(request):
     import firebase_admin
     from firebase_admin import credentials
@@ -77,7 +78,7 @@ def q_summerVibes(request):
     import urllib3
 
     if (not len(firebase_admin._apps)):
-        cred = credentials.Certificate('weatherwear-a4626-firebase-adminsdk-0nxej-aba5711d50.json')
+        cred = credentials.Certificate('weatherwear-a4626-firebase-adminsdk-0nxej-aba5711d50.json') #in pythonanywhere this must be a direct link i.e. /home/michaelspring/myapp/src/file.json
         firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://weatherwear-a4626.firebaseio.com/'
         })
